@@ -16,6 +16,8 @@ cd "$TMP"
 git init -q -b gh-pages
 git remote add origin "$REMOTE"
 cp -R "$ROOT/dist/." .
+# SPA 回退：直接访问 /courses 等子路由时由 404.html 兜底渲染
+cp index.html 404.html
 git add -A
 git -c user.name="lsh-baishui" \
     -c user.email="lsh-baishui@users.noreply.github.com" \
