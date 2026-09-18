@@ -68,10 +68,6 @@ button {
   padding: 0 1.5rem;
 }
 
-.site-main {
-  min-height: calc(100vh - 10rem);
-}
-
 /* ---------- 通用排版 ---------- */
 .kicker {
   display: inline-block;

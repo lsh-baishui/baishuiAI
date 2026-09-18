@@ -7,25 +7,41 @@ import FooterBar from '@/components/FooterBar.vue'
 <template>
   <div class="site">
     <NavBar />
-    <main class="site-main">
-      <RouterView v-slot="{ Component }">
-        <Transition name="fade" mode="out-in">
-          <component :is="Component" />
-        </Transition>
-      </RouterView>
-    </main>
-    <FooterBar />
+    <div class="site-body">
+      <main class="site-main">
+        <RouterView v-slot="{ Component }">
+          <Transition name="fade" mode="out-in">
+            <component :is="Component" />
+          </Transition>
+        </RouterView>
+      </main>
+      <FooterBar />
+    </div>
   </div>
 </template>
 
 <style scoped>
+/* 桌面端：左侧导航 + 右侧内容；移动端上下堆叠 */
 .site {
   display: flex;
-  flex-direction: column;
   min-height: 100vh;
+  align-items: stretch;
+}
+
+.site-body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .site-main {
   flex: 1;
+}
+
+@media (max-width: 768px) {
+  .site {
+    flex-direction: column;
+  }
 }
 </style>
