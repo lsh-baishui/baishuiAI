@@ -20,8 +20,7 @@ import { courseCategories } from '@/data/site'
 
 <style scoped>
 .page {
-  padding-top: 4.5rem;
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
 }
 
 .course-grid {
@@ -44,10 +43,6 @@ import { courseCategories } from '@/data/site'
 }
 
 @media (max-width: 640px) {
-  .page {
-    padding-top: 3.2rem;
-  }
-
   .course-grid {
     grid-template-columns: 1fr;
   }

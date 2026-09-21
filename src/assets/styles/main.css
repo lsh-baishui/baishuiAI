@@ -3,6 +3,7 @@
    --------------------------------------------- */
 :root {
   --bg: #faf7f1;
+  --page-bg: #f3efe6;
   --ink: #2c2823;
   --ink-soft: #4a443b;
   --muted: #8a7f6f;
@@ -83,7 +84,7 @@ button {
 }
 
 .section {
-  padding: 4.5rem 0;
+  padding: 3.2rem 0;
 }
 
 .section + .section {

@@ -27,8 +27,7 @@ import { workbench } from '@/data/site'
 
 <style scoped>
 .page {
-  padding-top: 4.5rem;
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
 }
 
 .feature-grid {
@@ -90,10 +89,6 @@ import { workbench } from '@/data/site'
 }
 
 @media (max-width: 640px) {
-  .page {
-    padding-top: 3.2rem;
-  }
-
   .soon-banner {
     flex-direction: column;
     align-items: flex-start;
