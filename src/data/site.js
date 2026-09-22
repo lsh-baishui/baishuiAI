@@ -7,7 +7,7 @@ export const site = {
   brand: '白水',
   brandEm: 'AI',
   drop: '💧',
-  tagline: '在高速发展的AI时代，使用AI变成了一项新的能力',
+  tagline: '让AI生成的内容，更符合我们的诉求',
   slogan: '把 AI 用成自己的生产力',
   intro:
     '白水AI 是李松浩的个人品牌。这里汇聚我持续打磨的三样东西：课程盒子、AI工作台、AI工具箱 —— 帮每一个普通人把 AI 真正用起来。',
