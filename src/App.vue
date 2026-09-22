@@ -1,53 +1,55 @@
 <script setup>
 import { RouterView } from 'vue-router'
-import TopBar from '@/components/TopBar.vue'
 import SideNav from '@/components/SideNav.vue'
 import FooterBar from '@/components/FooterBar.vue'
 </script>
 
 <template>
   <div class="site">
-    <TopBar />
     <div class="shell">
       <SideNav />
       <main class="site-main">
-        <div class="panel">
-          <RouterView v-slot="{ Component }">
-            <Transition name="fade" mode="out-in">
-              <component :is="Component" />
-            </Transition>
-          </RouterView>
+        <div class="content">
+          <div class="panel">
+            <RouterView v-slot="{ Component }">
+              <Transition name="fade" mode="out-in">
+                <component :is="Component" />
+              </Transition>
+            </RouterView>
+          </div>
+          <FooterBar />
         </div>
-        <FooterBar />
       </main>
     </div>
   </div>
 </template>
 
 <style scoped>
-/* BigModel 式布局：顶部品牌栏 + 左侧导航 + 右侧内容卡片 */
+/* AIHOT 式布局：白色侧边栏通栏 + 右侧暖灰内容区 */
 .site {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
   background: var(--page-bg);
 }
 
 .shell {
-  flex: 1;
   display: flex;
   align-items: stretch;
-  padding: 1.4rem 1.6rem;
-  max-width: 100rem;
-  width: 100%;
-  margin: 0 auto;
-  box-sizing: border-box;
+  min-height: 100vh;
 }
 
 .site-main {
   flex: 1;
   min-width: 0;
-  min-height: calc(100vh - 3.5rem - 2.8rem);
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 1.8rem;
+}
+
+.content {
+  flex: 1;
+  width: 100%;
+  max-width: 84rem;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
 }
@@ -62,12 +64,11 @@ import FooterBar from '@/components/FooterBar.vue'
 
 @media (max-width: 768px) {
   .shell {
-    padding: 0.8rem;
     flex-direction: column;
   }
 
   .site-main {
-    min-height: auto;
+    padding: 0.8rem;
   }
 
   .panel {
