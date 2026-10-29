@@ -4,26 +4,13 @@ import { RouterLink } from 'vue-router'
 const mainLinks = [
   {
     to: '/',
-    label: '首页',
+    label: '个人简历',
     icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg>',
   },
-]
-
-const businessLinks = [
   {
-    to: '/courses',
-    label: '课程盒子',
-    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8 12 3 3 8v8l9 5 9-5V8Z"/><path d="M3 8l9 5 9-5M12 13v8"/></svg>',
-  },
-  {
-    to: '/workbench',
-    label: 'AI工作台',
+    to: '/cases',
+    label: '案例墙',
     icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7.5" height="7.5" rx="1.5"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="1.5"/><rect x="3" y="13.5" width="7.5" height="7.5" rx="1.5"/><rect x="13.5" y="13.5" width="7.5" height="7.5" rx="1.5"/></svg>',
-  },
-  {
-    to: '/toolbox',
-    label: 'AI工具箱',
-    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/></svg>',
   },
 ]
 
@@ -32,7 +19,6 @@ const supportLinks = [
     to: { path: '/', hash: '#contact' },
     label: '联系白水',
     icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>',
-    plain: true,
   },
 ]
 </script>
@@ -55,16 +41,6 @@ const supportLinks = [
         <span>{{ link.label }}</span>
       </RouterLink>
     </nav>
-
-    <div class="nav-block">
-      <p class="group-label">业务线</p>
-      <nav class="nav-group" aria-label="业务线">
-        <RouterLink v-for="link in businessLinks" :key="link.label" :to="link.to" class="nav-item">
-          <span class="nav-icon" v-html="link.icon"></span>
-          <span>{{ link.label }}</span>
-        </RouterLink>
-      </nav>
-    </div>
 
     <div class="nav-block nav-block--support">
       <p class="group-label">支持</p>

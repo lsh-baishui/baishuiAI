@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '@/views/HomeView.vue'
+import ResumeView from '@/views/ResumeView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -9,25 +9,22 @@ const router = createRouter({
     return { top: 0 }
   },
   routes: [
-    { path: '/', name: 'home', component: HomeView, meta: { title: '白水AI · 把 AI 用成自己的生产力' } },
     {
-      path: '/courses',
-      name: 'courses',
-      component: () => import('@/views/CoursesView.vue'),
-      meta: { title: '课程盒子 · 白水AI' },
+      path: '/',
+      name: 'resume',
+      component: ResumeView,
+      meta: { title: '李松浩 · 个人简历 | 白水AI' },
     },
     {
-      path: '/workbench',
-      name: 'workbench',
-      component: () => import('@/views/WorkbenchView.vue'),
-      meta: { title: 'AI工作台 · 白水AI' },
+      path: '/cases',
+      name: 'cases',
+      component: () => import('@/views/CasesView.vue'),
+      meta: { title: '案例墙 | 白水AI' },
     },
-    {
-      path: '/toolbox',
-      name: 'toolbox',
-      component: () => import('@/views/ToolboxView.vue'),
-      meta: { title: 'AI工具箱 · 白水AI' },
-    },
+    // 旧业务线路由统一归入案例墙
+    { path: '/courses', redirect: '/cases' },
+    { path: '/workbench', redirect: '/cases' },
+    { path: '/toolbox', redirect: '/cases' },
     { path: '/:pathMatch(.*)*', redirect: '/' },
   ],
 })

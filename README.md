@@ -1,16 +1,15 @@
-# 白水AI · 品牌主站
+# 白水AI · 个人简历 + 案例墙
 
-李松浩的个人品牌「白水AI」对外统一入口：介绍白水，汇聚三条业务线。
+李松浩（白水AI 主理人）的个人网站，两大板块：
 
-- **课程盒子**：AI / AI定位 / AI做流量 / AI职场 / AI剪辑 / AI获客 六大分类课程
-- **AI工作台**：一站式 AI 作业入口（敬请期待）
-- **AI工具箱**：真实用过的好用 AI 工具合集（敬请期待）
+- **个人简历**（首页 `/`）：关于我、工作经历、技能、联系方式
+- **案例墙**（`/cases`）：数据工具、AI 应用、课程与网站的作品集，支持按类型筛选
 
 线上地址：`https://lsh-baishui.github.io/baishuiAI/`
 
 ## 技术栈
 
-Vue3 + Vite + vue-router，无 UI 框架，暖纸色品牌视觉。
+Vue3 + Vite + vue-router，无 UI 框架，暖纸色品牌视觉 + AIHOT 式墨绿导航。
 
 ## 本地开发
 
@@ -25,8 +24,16 @@ npm run preview   # 预览构建产物
 
 ## 部署
 
-推送到 `main` 分支后，GitHub Actions（`.github/workflows/deploy.yml`）自动构建并发布到 GitHub Pages。
+```bash
+bash scripts/deploy.sh   # 构建并发布到 gh-pages 分支（GitHub Pages）
+```
 
 ## 日常更新
 
-改内容只需要编辑 `src/data/site.js`（课程清单、业务线文案、联系方式都集中在这一个文件），提交推送即可自动上线。
+所有文案与数据集中在 `src/data/site.js`：
+
+- `profile`：简历档案（关于我、经历、技能、标签）
+- `cases`：案例墙条目（新增案例往数组里加一条即可）
+- `contact`：联系方式（目前为占位，替换 `handle` 字段）
+
+改完运行 `bash scripts/deploy.sh` 约 10 秒后自动上线。
